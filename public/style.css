@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --sub-heading: hsl(276, 100%, 81%);
+  --chat-on-left: hsl(276, 55%, 52%);
+  --chat-on-right: hsl(271, 15%, 43%);
+  --palceholder-text: hsl(206, 6%, 79%);
+  --main-heading: hsl(271, 36%, 24%);
+  --paragraph: hsl(270, 7%, 64%);
+  /* gradients */
+  --Light-Magenta: hsl(293, 100%, 63%);
+  --Light-Violet: hsl(264, 100%, 61%);
+  /* secondary colors */
+  --white: hsl(0, 0, 100%);
+  --app-bg: hsl(270, 20%, 96%);
+  --sumbmit-btn-bg: hsl(271, 36%, 24%);
+  --radio-btn-outline: hsl(289, 100%, 72%);
+  /* font-family */
+  --font-1: "Rubik", sans-serif;
+  /* border */
+  --border: solid #000 0.1rem;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.4rem;
+  font-family: var(--font-1);
+  padding: 3rem;
+}
+.wrapper {
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  padding: 3rem 2rem;
+}
+.wrapper > div {
+  border: var(--border);
+  width: 100%;
+}
+/* phone */
+.phone {
+  height: 85vh;
+  border-radius: 3.5rem;
+  padding: 1.2rem;
+}
+/* phone elements */
+.phone > div {
+  width: 100%;
+  border: var(--border);
+}
+.header {
+  height: 18%;
+  border-radius: 2.5rem 2.5rem 1rem 1rem;
+  /* margin-bottom: 2rem; */
+  position: relative;
+  /* display: flex;
+  align-items: flex-end;
+  justify-content: center; */
+}
+.header::before {
+  content: "";
+  position: absolute;
+  height: 30%;
+  width: 60%;
+  border: var(--border);
+  left: 50%;
+  top: -20%;
+  transform: translateX(-50%);
+  border-radius: 5rem;
+}
+.header > .content {
+  height: 60%;
+  width: 100%;
+  border: var(--border);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.header > .content .name,
+.option,
+.arrow {
+  border: var(--border);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header > .content .name {
+  width: 75%;
+  position: relative;
+}
+.header > .content .option {
+  width: 15%;
+  justify-content: center;
+}
+.arrow {
+  width: 10%;
+  justify-content: center;
+}
+.name::before {
+  content: "";
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  position: absolute;
+  border: var(--border);
+  left: 4%;
+  background: url(chat-app-css-illustration-master/images/avatar.jpg) no-repeat;
+  background-size: contain;
+}
+.name .name-text > p {
+  margin-left: 4.5rem;
+  font-size: 1.2rem;
+  max-width: 100%;
+}
+.name .name-text > p:first-child {
+  font-weight: 700;
+}
+.name .name-text > p:last-child {
+  font-size: 1rem;
+}
+.convo {
+  height: 82%;
+  border-radius: 0.5rem 0.5rem 2rem 2rem;
+  padding: 1rem;
+}
+.convo > div{
+    height: 10%;
+    width: 70%;
+    border: var(--border);
+    border-radius: 1rem;
+}
+/* .typer {
+  height: 10%;
+  border: var(--border);
+  width: 90%;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+} */
+/* text */
+.text {
+  height: 50vh;
+  margin-top: auto;
+}
