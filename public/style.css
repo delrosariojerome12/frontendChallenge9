@@ -53,7 +53,7 @@ body {
 /* phone */
 .phone {
   height: 90vh;
-  padding: .5rem;
+  padding: .8rem;
   border-radius: 2.5rem;
   background: var(--white);
 }
@@ -76,11 +76,11 @@ body {
   content: "";
   position: absolute;
   width: 60%;
-  height: 50%;
+  height: 40%;
   border-radius: 2.5rem;
   /* border: var(--border); */
   left: 50%;
-  top: 9%;
+  top: 12%;
   transform: translate(-50%, -50%);
   background: var(--white);
 }
@@ -207,7 +207,7 @@ body {
   padding: 1rem 2rem;
   position: relative;
 }
-.send{
+.send {
   content: "";
   border: var(--border);
   height: 2.5rem;
@@ -229,13 +229,13 @@ body {
   font-size: 1.6rem;
   width: 100%;
 }
-.booking h1{
+.booking h1 {
   margin-bottom: 2rem;
   font-weight: 600;
 }
-.booking p{
+.booking p {
   color: var(--paragraph);
-
+  line-height: 2.5rem;
 }
 .bg {
   height: 90vh;
@@ -252,39 +252,46 @@ body {
   left: 0;
   z-index: -1;
 }
-@media screen and (min-width: 375px) {
-  .wrapper{
+@media screen and (min-width: 380px) {
+  .wrapper {
     margin: auto;
     width: 85vw;
   }
-
-    .phone{
+  .phone {
     width: 28rem;
     margin: auto;
   }
-  .bg{
-  border-radius: 0 0 50% 0;
+  .bg {
+    border-radius: 0 0 50% 0;
     left: -30%;
   }
-  .booking{
-     width: 28rem;
-     margin: auto;
+  .booking {
+    width: 28rem;
+    margin: auto;
   }
 }
 @media screen and (min-width: 600px) {
-  .wrapper{
+  .wrapper {
     grid-template-columns: repeat(2, 1fr);
     height: 80vh;
     gap: 5rem;
+    grid-template-rows: repeat(1, 1fr);
   }
-  body{
+  .phone {
+    height: 77vh;
+  }
+  body {
     padding: 3rem;
   }
-  .booking{
-    margin-top: auto;
-    margin-bottom: auto;
+  .booking {
+    /* margin-top: 25rem; */
     text-align: left;
     width: 100%;
   }
-  
+}
+@media screen and (min-width: 1000px){
+    .phone {
+    max-height: 77vh;
+    margin-top: 5rem;
+  }
 }
