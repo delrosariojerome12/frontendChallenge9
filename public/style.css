@@ -9,7 +9,7 @@
   --sub-heading: hsl(276, 100%, 81%);
   --chat-on-left: hsl(276, 55%, 52%);
   --chat-on-right: hsl(271, 15%, 43%);
-  --palceholder-text: hsl(206, 6%, 79%);
+  --placeholder-text: hsl(206, 6%, 79%);
   --main-heading: hsl(271, 36%, 24%);
   --paragraph: hsl(270, 7%, 64%);
   /* gradients */
@@ -23,45 +23,45 @@
   /* font-family */
   --font-1: "Rubik", sans-serif;
   /* border */
-  --border: solid #000 0.1rem;
+  /* --border: solid #000 0.1rem; */
 }
 html {
   font-size: 62.5%;
+  font-family: var(--font-1);
 }
 body {
-  font-size: 1.4rem;
-  font-family: var(--font-1);
-  padding: 3rem;
+  padding: 4rem 5rem;
+  font-size: 1.2rem;
   background: var(--app-bg);
 }
 .wrapper {
-  height: 150vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   border: var(--border);
-  padding: 1.5rem 2rem;
+  height: 160vh;
+  /* width: 100%; */
+  width: 28rem;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  display: grid;
+  grid-template: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10rem;
 }
 .wrapper > div {
   border: var(--border);
-  width: 100%;
 }
 /* phone */
 .phone {
   height: 90vh;
-  border-radius: 3.5rem;
-  padding: 1.2rem;
-  position: relative;
-  width: 100%;
+  padding: .5rem;
+  border-radius: 2.5rem;
   background: var(--white);
 }
-/* phone elements */
-.phone > div {
-  width: 100%;
+/* .phone > div {
   border: var(--border);
-}
+} */
 .header {
-  height: 15%;
+  height: 12%;
   border-radius: 2.5rem 2.5rem 1rem 1rem;
   position: relative;
   background: linear-gradient(
@@ -69,137 +69,222 @@ body {
     var(--Light-Violet),
     var(--Light-Magenta)
   );
+  display: flex;
+  align-items: flex-end;
 }
 .header::before {
   content: "";
   position: absolute;
-  height: 30%;
   width: 60%;
-  border: var(--border);
+  height: 50%;
+  border-radius: 2.5rem;
+  /* border: var(--border); */
   left: 50%;
-  top: -10%;
-  transform: translateX(-50%);
-  border-radius: 5rem;
-  z-index: 2;
+  top: 9%;
+  transform: translate(-50%, -50%);
   background: var(--white);
 }
-.header > .content {
-  height: 60%;
-  width: 100%;
+.header > div {
   /* border: var(--border); */
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-}
-.header > .content .name,
-.option,
-.arrow {
-  /* border: var(--border); */
-  height: 100%;
   display: flex;
   align-items: center;
-}
-.header > .content .name {
-  width: 75%;
-  position: relative;
-}
-.header > .content .option {
-  width: 15%;
-  justify-content: center;
+  margin-bottom: 0.3rem;
+  color: #fff;
 }
 .arrow {
+  height: 50%;
   width: 10%;
-  justify-content: center;
+  justify-content: flex-end;
 }
-.name::before {
-  content: "";
-  height: 2.5rem;
-  width: 2.5rem;
-  border-radius: 50%;
-  position: absolute;
-  border: var(--border);
-  left: 4%;
+.name {
+  width: 80%;
+  height: 50%;
+}
+.name .name-text {
+  margin-left: 0.7rem;
+  font-weight: 500;
+}
+.name-text p:last-child {
+  opacity: 0.7;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.image {
+  height: 3rem;
+  width: 3rem;
+  border: wheat solid 0.2rem;
+  border-radius: 100rem;
+  margin-left: 0.6rem;
   background: url(chat-app-css-illustration-master/images/avatar.jpg) no-repeat;
   background-size: contain;
+  background-position: center;
 }
-.name .name-text > p {
-  margin-left: 4.5rem;
-  font-size: 1.2rem;
-  max-width: 100%;
+.settings {
+  height: 50%;
+  width: 10%;
 }
-.name .name-text > p:first-child {
-  font-weight: 700;
-}
-.name .name-text > p:last-child {
-  font-size: 1rem;
-}
-.convo {
-  height: 85%;
-  border-radius: 0.5rem 0.5rem 2rem 2rem;
-  padding: 1rem;
-  overflow: auto;
-  position: relative;
+.content {
+  height: 88%;
+  padding: 1rem 1rem;
+  border-radius: 0.2rem 0.2rem 2.5rem 2.5rem;
   background: var(--app-bg);
 }
-.convo > div {
-  width: 80%;
+.content > div {
+  /* height: 4rem; */
   /* border: var(--border); */
-  border-radius: 1rem;
+  width: 75%;
   margin-bottom: 1rem;
+  border-radius: 1rem;
   padding: 0.7rem;
-  font-size: 1.3rem;
+  background: var(--placeholder-text);
   color: var(--chat-on-left);
-  background: var(--palceholder-text);
 }
-.text-3 {
-  height: 15%;
+.content > .text-3 {
+  margin-left: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: auto;
+  height: 5.5rem;
+  background: transparent;
 }
 .text-3 > div {
   height: 100%;
-  border: var(--border);
-  border-radius: 1.5rem;
   width: 30%;
+  /* border: var(--border); */
+  border-radius: 1rem;
 }
-.img-1 {
+.pic-1 {
   background: url(chat-app-css-illustration-master/images/dog-image-1.jpg)
     no-repeat;
   background-size: cover;
   background-position: center;
 }
-.img-2 {
+.pic-2 {
   background: url(chat-app-css-illustration-master/images/dog-image-2.jpg)
     no-repeat;
   background-size: cover;
   background-position: center;
 }
-.img-3 {
+.pic-3 {
   background: url(chat-app-css-illustration-master/images/dog-image-3.jpg)
     no-repeat;
   background-size: cover;
   background-position: center;
 }
-.text-4, .text-5{
-    margin-left: auto;
+.content > .text-5,
+.content > .text-4 {
+  margin-left: auto;
+  color: var(--chat-on-right);
+  background: var(--white);
 }
-.phone > .type-here {
-  position: absolute;
-  border: var(--border);
-  width: 80%;
-  height: 3.5rem;
+.content > .text-5 {
+  width: 47%;
+}
+.content > .text-4 {
+  width: 65%;
+}
+.content > .text-7,
+.content > .text-8 {
+  height: 3.6rem;
+  color: var(--white);
+  background: linear-gradient(
+    to right,
+    var(--Light-Magenta),
+    var(--Light-Violet)
+  );
+  display: flex;
+  align-items: center;
+  border-radius: 1.5rem 1rem 1rem 0.5rem;
+}
+.content > .type {
   border-radius: 2.5rem;
-  bottom: 4%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  background: red;
+  width: 90%;
+  height: 3.5rem;
+  margin: auto;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
 }
-.text {
-  height: 50vh;
-  margin-top: auto;
+.send{
+  content: "";
+  border: var(--border);
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  left: 98%;
+  transform: translateX(-98%);
+  border-radius: 100%;
+  background: var(--main-heading);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+}
+/* bottom text */
+.booking {
+  height: 40vh;
+  text-align: center;
+  font-size: 1.6rem;
+  width: 100%;
+}
+.booking h1{
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.booking p{
+  color: var(--paragraph);
+
+}
+.bg {
+  height: 90vh;
+  width: 50%;
+  /* border: var(--border); */
+  border-radius: 0 0 100% 0;
+  background: linear-gradient(
+    to bottom,
+    var(--Light-Magenta),
+    var(--Light-Violet)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+@media screen and (min-width: 375px) {
+  .wrapper{
+    margin: auto;
+    width: 85vw;
+  }
+
+    .phone{
+    width: 28rem;
+    margin: auto;
+  }
+  .bg{
+  border-radius: 0 0 50% 0;
+    left: -30%;
+  }
+  .booking{
+     width: 28rem;
+     margin: auto;
+  }
+}
+@media screen and (min-width: 600px) {
+  .wrapper{
+    grid-template-columns: repeat(2, 1fr);
+    height: 80vh;
+    gap: 5rem;
+  }
+  body{
+    padding: 3rem;
+  }
+  .booking{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: left;
+    width: 100%;
+  }
+  
 }
